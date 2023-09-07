@@ -1,0 +1,25 @@
+{
+  "name": "common-backend-api",
+  "version": "1.0.0",
+  "description": "It contains all common file for API's, i.e, error handling, logs, etc.",
+  "main": "index.js",
+  "scripts": {
+    "commit":"cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mayank Rajput <mayankrajput8745@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "express-winston": "^4.2.0"
+  },
+  "dependencies": {
+    "winston": "^3.10.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
