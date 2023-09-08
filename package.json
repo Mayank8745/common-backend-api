@@ -4,17 +4,20 @@
   "description": "It contains all common file for API's, i.e, error handling, logs, etc.",
   "main": "index.js",
   "scripts": {
-    "commit":"cz",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "standard-version",
+    "commit": "cz"
   },
   "author": "Mayank Rajput <mayankrajput8745@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.5.9",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "express-winston": "^4.2.0"
+    "standard-version": "^9.5.0",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
+    "express-winston": "^4.2.0",
     "winston": "^3.10.0"
   },
   "config": {
