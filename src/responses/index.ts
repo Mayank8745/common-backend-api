@@ -1,9 +1,11 @@
+import { Response } from "express";
+
 export const StatusCode = {
   SUCCESS: 10000,
   INTERNAL_SERVER_ERROR: 10001,
   URI_NOT_FOUND: 10002,
   UNAUTHORIZED: 10003,
-  AUTHENTICATION_FAIL: 20000,
+  AUTHENTICATION_FAILED: 20000,
   REDIRECT_URI_INVALID: 20003,
   INVALID_REFRESH_TOKEN: 20006,
 };
@@ -24,3 +26,20 @@ export const ResponseCode = {
   INTERNAL_SERVER_ERROR: 500,
   NOT_IMPLEMENTED: 501,
 };
+
+export const successResponse = (res: Response, message: String, data: any) => {
+  return res
+    .status(ResponseCode.SUCCESS)
+    .json({ status: StatusCode.SUCCESS, message, data });
+};
+
+export const successCreatedResponse = (
+  res: Response,
+  message: String,
+  data: any
+) => {
+  return res
+    .status(ResponseCode.CREATED)
+    .json({ status: StatusCode.SUCCESS, message, data });
+};
+
