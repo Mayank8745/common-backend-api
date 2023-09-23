@@ -1,4 +1,5 @@
-import { Response } from "express";
+import { Response, response } from "express";
+import { STATUS_CODES } from "http";
 
 export const StatusCode = {
   SUCCESS: 10000,
@@ -43,3 +44,8 @@ export const successCreatedResponse = (
     .json({ status: StatusCode.SUCCESS, message, data });
 };
 
+export const NotFoundResponse = (res: Response, message: String) => {
+  return res
+    .status(ResponseCode.NOT_FOUND)
+    .json({ status: StatusCode.URI_NOT_FOUND, message });
+};
