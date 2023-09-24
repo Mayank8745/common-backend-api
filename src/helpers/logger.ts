@@ -6,7 +6,7 @@ const consoleTransports = new transports.Console({
   level: logLevel,
   format: format.combine(
     format.errors({ stack: true }),
-    format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+    format.timestamp({ format: "YYYY-MM-DD hh:mm:ssA" }),
     format.printf((info) => {
       if (info.stack)
         return `${info.timestamp} ${info.level} ${info.message} \n ${info.stack}`;

@@ -5,7 +5,7 @@ export const apiLogger = logger({
   transports: [new transports.Console()],
   format: format.combine(
     format.errors({ stack: true }),
-    format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+    format.timestamp({ format: "YYYY-MM-DD hh:mm:ssA" }),
     format.printf(({ message, level, timestamp, stack }) => {
       if (stack) return `${timestamp} ${level}: ${message} \n ${stack}`;
       return `${timestamp} ${level}: ${message}`;
@@ -21,7 +21,7 @@ export const errorLogger = logger({
   transports: [new transports.Console()],
   format: format.combine(
     format.errors({ stack: true }),
-    format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
+    format.timestamp({ format: "YYYY-MM-DD hh:mm:ssA" }),
     format.printf(({ message, level, timestamp, meta }) => {
       const error = JSON.stringify(meta?.error);
       const username = JSON.stringify(meta?.username);

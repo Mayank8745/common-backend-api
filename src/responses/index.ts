@@ -1,5 +1,4 @@
-import { Response, response } from "express";
-import { STATUS_CODES } from "http";
+import { Response} from "express";
 
 export const StatusCode = {
   SUCCESS: 10000,

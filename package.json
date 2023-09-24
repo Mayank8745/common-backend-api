@@ -2,7 +2,11 @@
   "name": "common-backend-api",
   "version": "1.0.0",
   "description": "It contains all common file for API's, i.e, error handling, logs, etc.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "release": "standard-version",
     "commit": "cz",
@@ -23,7 +27,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-winston": "^4.2.0",
-    "nanoid": "^5.0.1",
+    "nanoid": "^3.3.6",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "winston": "^3.10.0"
