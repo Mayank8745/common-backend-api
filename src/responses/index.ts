@@ -1,8 +1,8 @@
-import { Response} from "express";
+import { Response } from "express";
 
 export const StatusCode = {
   SUCCESS: 10000,
-  INTERNAL_SERVER_ERROR: 10001,
+  FAILURE: 10001,
   URI_NOT_FOUND: 10002,
   UNAUTHORIZED: 10003,
   AUTHENTICATION_FAILED: 20000,
@@ -43,8 +43,17 @@ export const successCreatedResponse = (
     .json({ status: StatusCode.SUCCESS, message, data });
 };
 
-export const NotFoundResponse = (res: Response, message: String) => {
+export const notFoundResponse = (res: Response, errors = [{}]) => {
   return res
     .status(ResponseCode.NOT_FOUND)
-    .json({ status: StatusCode.URI_NOT_FOUND, message });
+    .json({ status: StatusCode.FAILURE, errors });
+};
+
+export const badRequestResponse = (
+  res: Response,
+  errors = [{ message: "Bad Parameters" }]
+) => {
+  return res
+    .status(ResponseCode.BAD_REQUEST)
+    .json({ status: StatusCode.FAILURE, errors });
 };
