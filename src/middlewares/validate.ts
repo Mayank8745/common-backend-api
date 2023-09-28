@@ -10,7 +10,7 @@ export enum ValidationSource {
   QUERY = "query",
 }
 
-export const validate =
+export const validator =
   (schema: ObjectSchema, source: ValidationSource = ValidationSource.BODY) =>
   (req: Request, _res: Response, next: NextFunction) => {
     try {
