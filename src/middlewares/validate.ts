@@ -12,20 +12,20 @@ export enum ValidationSource {
 
 export const validator =
   (schema: ObjectSchema, source: ValidationSource = ValidationSource.BODY) =>
-  (req: Request, _res: Response, next: NextFunction) => {
-    try {
-      const { error } = schema.validate(source);
-      if (!error) return next();
-      logger.error(error);
+    (req: Request, _res: Response, next: NextFunction) => {
+      try {
+        const { error } = schema.validate(source);
+        if (!error) return next();
+        logger.error(error);
 
-      const { details } = error;
-      const message = details
-        .map((i) => i.message.replace(/['"]+/g, ""))
-        .join(",");
-      logger.info(message);
+        const { details } = error;
+        const message = details
+          .map((i) => i.message.replace(/['"]+/g, ""))
+          .join(",");
+        logger.info(message);
 
-      return next(new BadRequestError(message));
-    } catch (error) {
-      return next(error);
-    }
-  };
+        return next(new BadRequestError(message));
+      } catch (error) {
+        return next(error);
+      }
+    };
