@@ -1,6 +1,6 @@
 {
   "name": "common-backend-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "It contains all common file for API's, i.e, error handling, logs, etc.",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/express": "^4.17.18",
-    "@types/node": "^20.6.4",
+    "@types/node": "^20.7.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "standard-version": "^9.5.0",
@@ -29,8 +29,8 @@
     "express": "^4.18.2",
     "express-winston": "^4.2.0",
     "joi": "^17.10.2",
-    "nanoid": "^3.3.6",
-    "rimraf": "^5.0.1",
+    "nanoid": "^5.0.1",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "winston": "^3.10.0"
   },
