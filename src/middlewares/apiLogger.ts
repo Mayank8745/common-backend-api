@@ -7,7 +7,7 @@ export const apiLogger = logger({
     format.errors({ stack: true }),
     format.timestamp({ format: "YYYY-MM-DD hh:mm:ssA" }),
     format.printf(({ message, level, timestamp, stack }) => {
-      if (stack) return `${timestamp} ${level}: ${message} \n ${stack}`;
+      if (stack) return `${timestamp} ${level}: ${message}\n${stack}`;
       return `${timestamp} ${level}: ${message}`;
     })
   ),
